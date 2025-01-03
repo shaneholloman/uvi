@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] Add trusted pypi publishing to the project
 - [ ] Ensure project description is printed to the github site repo page
 - [ ] Ensure user has gh cli installed
 - [ ] Ensure user has uv cli installed
