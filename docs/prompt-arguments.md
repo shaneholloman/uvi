@@ -1,6 +1,9 @@
-# Prompt arguments
+# Prompt Arguments
 
-When running the command `ccp` a prompt will start which enables you to configure your repository. The
+> [!NOTE]
+> Not Ai prompts, but the prompts for the `uvi` command. There zero Ai function in this project
+
+When running the command `uvi` a prompt will start which enables you to configure your repository. The
 prompt values and their explanation are as follows:
 
 ---
