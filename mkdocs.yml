@@ -1,0 +1,48 @@
+site_name: uvi
+repo_url: https://github.com/shaneholloman/uvi
+site_url: https://shaneholloman.github.io/uvi
+site_description: A cookiecutter template for Python projects that use uv for its dependency management
+site_author: Shane Holloman
+edit_uri: edit/main/docs/
+repo_name: shaneholloman/uvi
+copyright: Maintained by <a href="https://shaneholloman.com">Shane</a>.
+
+plugins:
+  - search
+  - mkdocstrings
+extra_css:
+  - stylesheets/extra.css
+theme:
+  name: material
+  feature:
+    tabs: true
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/medical-bag
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/shaneholloman/uvi
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/uvi/
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true

@@ -1,0 +1,7 @@
+{
+  "include": ["uvi"],
+  "exclude": ["**/node_modules", "**/__pycache__", "{{cookiecutter.project_name}}"],
+  "reportMissingImports": false,
+  "reportMissingTypeStubs": false,
+  "useLibraryCodeForTypes": true
+}
