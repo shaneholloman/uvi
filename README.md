@@ -9,6 +9,8 @@ This is a modern Cookiecutter template that can be used to initiate a Python pro
 
 > This project 'works' but is far from perfect!
 
+See todos: [TODO.md](./TODO.md)
+
 - [uv](https://docs.astral.sh/uv/) for dependency management
 - CI/CD with [GitHub Actions](https://github.com/features/actions)
 - Pre-commit hooks with [pre-commit](https://pre-commit.com/)
