@@ -2,7 +2,6 @@ example-project
 uvi-example
 .history/
 .ruff_cache/
-uv.lock
 
 # From https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
 
