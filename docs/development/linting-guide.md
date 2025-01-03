@@ -112,6 +112,7 @@ repos:
 ### Why Both Linters?
 
 1. **Ruff** (Primary Linter)
+
    - Extremely fast execution
    - Catches most common issues
    - Auto-fixes many problems
@@ -144,12 +145,14 @@ repos:
 ## Best Practices
 
 1. **Development Workflow**
+
    - Run Ruff frequently during development
    - Use Ruff's auto-fix capability
    - Run Pylint before committing
    - Address Pylint warnings thoughtfully
 
 2. **Issue Resolution**
+
    - Fix Ruff issues immediately (they're usually straightforward)
    - Review Pylint warnings carefully (they might indicate design issues)
    - Document any necessary linter suppressions
@@ -186,6 +189,7 @@ Both linters run in CI:
 ## Future Considerations
 
 1. Monitor Ruff's development
+
    - May be able to reduce Pylint usage as Ruff grows
    - Watch for new rules that could replace Pylint checks
 
