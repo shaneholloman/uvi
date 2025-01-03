@@ -7,6 +7,7 @@
 
 This is a modern Cookiecutter template that can be used to initiate a Python project with all the necessary tools for development, testing, and deployment. It supports the following features:
 
+> [!IMPORTANT]
 > This project 'works' but is far from perfect!
 
 See todos: [TODO.md](./TODO.md)
@@ -14,7 +15,7 @@ See todos: [TODO.md](./TODO.md)
 - [uv](https://docs.astral.sh/uv/) for dependency management
 - CI/CD with [GitHub Actions](https://github.com/features/actions)
 - Pre-commit hooks with [pre-commit](https://pre-commit.com/)
-- Code quality with [ruff](https://github.com/charliermarsh/ruff), [mypy](https://mypy.readthedocs.io/en/stable/), [deptry](https://github.com/shaneholloman/deptry/) and [prettier](https://prettier.io/)
+- Code quality with [ruff](https://github.com/charliermarsh/ruff), [mypy](https://mypy.readthedocs.io/en/stable/), [deptry](https://github.com/shaneholloman/deptry/), [prettier](https://prettier.io/) and [pylint](https://www.pylint.org/)
 - Publishing to [PyPI](https://pypi.org) by creating a new release on GitHub
 - Testing and coverage with [pytest](https://docs.pytest.org/en/7.1.x/) and [codecov](https://about.codecov.io/)
 - Documentation with [MkDocs](https://www.mkdocs.org/)
