@@ -1,6 +1,6 @@
 # Publishing to PyPI
 
-> wip!
+> WIP!
 
 This document outlines two methods for publishing the `uvi` package to PyPI.
 
