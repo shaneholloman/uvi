@@ -17,6 +17,8 @@ on:
 jobs:
   deploy-docs:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write # This is required for pushing to gh-pages
     steps:
       - name: Check out
         uses: actions/checkout@v4
