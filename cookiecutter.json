@@ -1,7 +1,7 @@
 {
-  "author": "Shane Holloman",
-  "email": "shaneholloman@gmail.com",
-  "author_github_handle": "shaneholloman",
+  "author": "",
+  "email": "example@example.com",
+  "author_github_handle": "",
   "project_name": "example-project",
   "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
   "project_description": "This is a template repository for Python projects that use uv for their dependency management.",
@@ -21,3 +21,4 @@
     "Not open source"
   ]
 }
+  
