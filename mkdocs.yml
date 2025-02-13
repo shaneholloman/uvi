@@ -1,10 +1,10 @@
 site_name: uvi
-repo_url: https://github.com/shaneholloman/uvi
-site_url: https://shaneholloman.github.io/uvi
+repo_url: https://github.com/example/repo
+site_url: https://example.com
 site_description: A cookiecutter template for Python projects that use uv for its dependency management
 site_author: Shane Holloman
 edit_uri: edit/main/docs/
-repo_name: shaneholloman/uvi
+repo_name: example.com/uvi/uvi
 copyright: Maintained by <a href="https://shaneholloman.com">Shane</a>.
 
 plugins:
