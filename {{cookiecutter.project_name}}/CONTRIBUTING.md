@@ -5,7 +5,7 @@ Every little bit helps, and credit will always be given.
 
 You can contribute in many ways:
 
-# Types of Contributions
+## Types of Contributions
 
 ## Report Bugs
 
@@ -42,10 +42,10 @@ If you are proposing a new feature:
 - Remember that this is a volunteer-driven project, and that contributions
   are welcome :)
 
-# Get Started
+## Get Started
 
 Ready to contribute? Here's how to set up `{{cookiecutter.project_name}}` for local development.
-Please note this documentation assumes you already have `uv` and `Git` installed and ready to go.
+Please note this documentation assumes you already have `uv` and `git` installed and ready to go.
 
 1. Fork the `{{cookiecutter.project_name}}` repo on GitHub.
 
@@ -117,7 +117,7 @@ Please note this documentation assumes you already have `uv` and `Git` installed
 
 10. Submit a pull request through the GitHub website.
 
-# Pull Request Guidelines
+## Pull Request Guidelines
 
 Before you submit a pull request, check that it meets these guidelines:
 
