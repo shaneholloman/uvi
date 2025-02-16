@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] use git user name and email in the project to prefill the cookiecutter prompts
 - [ ] Add trusted pypi publishing to the project
 - [ ] Ensure project description is printed to the github site repo page
 - [ ] Ensure user has gh cli installed

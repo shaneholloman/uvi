@@ -44,9 +44,11 @@ end
 2. Create a new branch: `git checkout -b add-uvi`
 3. Add your formula to `Formula/u/uvi.rb`
 4. Test locally:
+
    ```bash
    brew test-bot --only-formulae uvi
    ```
+
 5. Create a Pull Request
 
 ## Option 2: Personal Tap
@@ -55,12 +57,14 @@ end
 
 1. Create a new GitHub repository named `homebrew-tools`
 2. Clone it locally:
+
    ```bash
    git clone git@github.com:shaneholloman/homebrew-tools.git
    cd homebrew-tools
    ```
 
 3. Add the formula file:
+
    ```bash
    mkdir -p Formula
    # Copy the formula from above into Formula/uvi.rb
@@ -87,12 +91,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          
+
       - name: Get package info
         id: package
         run: |
@@ -103,12 +107,12 @@ jobs:
           echo "version=${VERSION}" >> $GITHUB_ENV
           echo "url=${URL}" >> $GITHUB_ENV
           echo "sha=${SHA}" >> $GITHUB_ENV
-          
+
       - name: Update formula
         run: |
           sed -i "s|url.*|url \"${{ env.url }}\"|" Formula/uvi.rb
           sed -i "s|sha256.*|sha256 \"${{ env.sha }}\"|" Formula/uvi.rb
-          
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
@@ -116,7 +120,7 @@ jobs:
           title: "Update uvi to ${{ env.version }}"
           body: |
             Updates uvi formula to version ${{ env.version }}
-            
+
             - URL: ${{ env.url }}
             - SHA256: ${{ env.sha }}
           branch: update-uvi
