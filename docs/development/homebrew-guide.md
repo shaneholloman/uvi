@@ -83,7 +83,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version to update to (leave empty for latest)'
+        description: "Version to update to (leave empty for latest)"
         required: false
 
 jobs:
@@ -95,7 +95,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Get package info
         id: package
@@ -132,17 +132,17 @@ jobs:
 Add to your main `uvi` repository's release workflow:
 
 ```yaml
-  update-homebrew:
-    needs: [publish]  # Assuming you have a publish job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger formula update
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.WORKFLOW_TOKEN }}
-          repository: shaneholloman/homebrew-tools
-          event-type: uvi-release
-          client-payload: '{"version": "${{ github.ref_name }}"}'
+update-homebrew:
+  needs: [publish] # Assuming you have a publish job
+  runs-on: ubuntu-latest
+  steps:
+    - name: Trigger formula update
+      uses: peter-evans/repository-dispatch@v3
+      with:
+        token: ${{ secrets.WORKFLOW_TOKEN }}
+        repository: shaneholloman/homebrew-tools
+        event-type: uvi-release
+        client-payload: '{"version": "${{ github.ref_name }}"}'
 ```
 
 ### 4. Installation Instructions
@@ -160,6 +160,7 @@ brew install uvi
 ## Required Actions
 
 1. **For Homebrew Core**:
+
    - [ ] Get current PyPI package URL
    - [ ] Calculate SHA256
    - [ ] Submit PR to Homebrew Core
