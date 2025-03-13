@@ -1,0 +1,74 @@
+# UVI Project Progress
+
+## What Works
+
+1. **Core CLI Functionality**
+   - Command-line interface for creating Python projects
+   - Integration with cookiecutter templating system
+   - Version information display
+
+2. **Project Generation**
+   - Complete project structure creation
+   - Configuration via interactive prompts
+   - Template processing with variable substitution
+
+3. **Features Configuration**
+   - GitHub Actions integration
+   - PyPI publishing setup
+   - Documentation with MkDocs
+   - Code quality tools (ruff, mypy, deptry)
+   - Testing with pytest and coverage
+   - Containerization with Docker
+   - Development environments with VSCode devcontainers
+
+4. **Hook System**
+   - Pre-generation validation
+   - Post-generation cleanup
+   - Conditional file removal based on user selections
+
+5. **Documentation**
+   - Project setup instructions
+   - Feature documentation
+   - Prompt arguments explained
+
+## Current Status
+
+- Version 0.3.3 is published and functional
+- Basic project generation works reliably
+- All advertised features are implemented
+- Documentation is in place
+
+## Known Issues
+
+- No automatic prefill of git user information
+- No check for required tools (gh CLI, uv CLI)
+- No option to add pylint in prompt arguments
+- No python_version selection option
+- Pylint issues in info/ directory
+- Documentation-deploy function in Makefile needs improvement
+- No .env file handling
+
+## What's Left to Build
+
+From the TODO list, the following items need to be implemented:
+
+1. **Current Focus**
+   - [x] Implementation of git user prefill for cookiecutter prompts (in progress)
+
+2. **Future Work**
+   - [ ] Add trusted PyPI publishing to the project
+   - [ ] Ensure project description is printed to the GitHub site repo page
+   - [ ] Add checks for gh CLI and uv CLI installation
+   - [ ] Fix pylint issues in info/ directory
+   - [ ] Add pylint option to prompt arguments
+   - [ ] Add python_version selection option
+   - [ ] Add codemapper option
+   - [ ] Add .env file handling capability
+   - [ ] Improve docs-deploy function in root Makefile
+
+## Progress Metrics
+
+- Feature completeness: ~80%
+- Documentation completeness: ~90%
+- Test coverage: Good, with room for improvement
+- Code quality: Generally good, with some areas needing attention

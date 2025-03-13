@@ -1,0 +1,66 @@
+# UVI Project Intelligence
+
+## Code Style Patterns
+
+- Always include `from __future__ import annotations` as the first import
+- Use type annotations for function parameters and return types
+- Follow PEP 8 conventions with a line length of 120 characters
+- Group imports: stdlib first, third-party second, local modules third
+- Use descriptive variable names and document complex logic
+
+## Project-Specific Patterns
+
+- The main CLI entry point is in `uvi/cli.py`
+- Template configuration is defined in `cookiecutter.json`
+- The project uses a template directory structure with `{{cookiecutter.project_name}}/`
+- Generation hooks are in the `hooks/` directory
+- Error handling should always provide clear, user-friendly messages
+
+## Implementation Approaches
+
+- When extending the CLI, modify `uvi/cli.py` directly
+- For template changes, update the files in `{{cookiecutter.project_name}}/`
+- For changes to the generation process, modify the hook scripts
+- Always maintain backward compatibility with existing commands
+
+## Error Handling
+
+- Command-line tool errors should be caught and displayed clearly
+- Use error codes for systematic error handling
+- Provide actionable error messages that guide the user
+- Handle edge cases for missing dependencies or configuration
+
+## Testing Strategy
+
+- Use pytest for all tests
+- Test the CLI by running it with different configurations
+- Mock external dependencies where appropriate
+- Include both positive and negative test cases
+
+## Documentation Conventions
+
+- Document all public functions with Google-style docstrings
+- Include Args and Returns sections in docstrings
+- Update README.md when adding features
+- Add feature documentation to the corresponding files in docs/
+
+## Release Process
+
+- Update version in `uvi/__init__.py` and `pyproject.toml`
+- Create a GitHub release to trigger the release workflow
+- Document changes in the release notes
+- Ensure all tests pass before releasing
+
+## Security Considerations
+
+- Never include hardcoded credentials
+- Validate all user input
+- Use secure defaults for generated projects
+- Follow security best practices in generated code
+
+## User Interaction
+
+- Provide clear, concise prompts
+- Offer sensible defaults where possible
+- Give feedback on successful operations
+- Handle errors gracefully with actionable messages
