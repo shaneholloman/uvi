@@ -23,5 +23,3 @@ repos:
       - id: prettier
         exclude: ^{{cookiecutter.project_name}}|\.md$|memory-bank/
         types_or: [yaml, json, css, html]
-
-  # Pylint has been removed in favor of Ruff, which includes Pylint-equivalent rules
