@@ -1,4 +1,4 @@
-# UVI - UV Init
+# UVI
 
 > The future of Python project templating powered by UV
 
