@@ -1,5 +1,5 @@
-example-project
-uvi-example
+**/example-project/
+**/uvi-example/
 .history/
 .ruff_cache/
 node_modules/
