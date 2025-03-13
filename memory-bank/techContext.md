@@ -76,7 +76,7 @@ The template can generate projects with the following configurable technologies:
 
 - **cookiecutter**: Template system for project generation
 
-### Development Dependencies
+### Development Dependencies Specification
 
 The project uses several development dependencies:
 

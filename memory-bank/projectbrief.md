@@ -35,5 +35,5 @@ UVI (UV Init) is a modern Cookiecutter template for Python projects that integra
 
 - [x] Implement git user details prefilling for cookiecutter prompts
 - [x] Migrate from Pylint to Ruff with Pylint-equivalent rules
-- Fix remaining linting issues in the info/ directory
-- Address remaining items in the TODO.md file
+- [ ] Fix remaining linting issues in the info/ directory
+- [ ] Address remaining items in the TODO.md file
