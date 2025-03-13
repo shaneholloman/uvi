@@ -1,39 +1,61 @@
-# `uvi`
+# UVI - UV Init
 
----
+> The future of Python project templating powered by UV
 
-This is a modern Cookiecutter template that can be used to initiate a Python project with all the necessary tools for development, testing, and deployment. It supports the following features:
+UVI (UV Init) is a modern Python project generator built around [UV](https://docs.astral.sh/uv/) - the revolutionary package manager that's reshaping the Python ecosystem. It provides a streamlined CLI that generates fully-configured Python projects with best practices and modern development tools already set up.
 
-- [uv](https://docs.astral.sh/uv/) for dependency management
-- CI/CD with [GitHub Actions](https://github.com/features/actions)
-- Pre-commit hooks with [pre-commit](https://pre-commit.com/)
-- Code quality with [ruff](https://github.com/charliermarsh/ruff), [mypy](https://mypy.readthedocs.io/en/stable/), [deptry](https://github.com/shaneholloman/deptry/) and [prettier](https://prettier.io/)
-- Publishing to [PyPI](https://pypi.org) by creating a new release on GitHub
-- Testing and coverage with [pytest](https://docs.pytest.org/en/7.1.x/) and [codecov](https://about.codecov.io/)
-- Documentation with [MkDocs](https://www.mkdocs.org/)
-- Compatibility testing for multiple versions of Python with [tox-uv](https://github.com/tox-dev/tox-uv)
-- Containerization with [Docker](https://www.docker.com/)
-- Development environment with [VSCode devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)
+## Why UVI?
 
-An example of a repository generated with this package can be found [here](https://github.com/shaneholloman/uvi-example).
+UVI lets you **instantly create production-ready Python projects** with a single command. Every project comes with:
 
-## Quickstart
+- **[UV](https://docs.astral.sh/uv/) at the core**: 10-100x faster dependency management
+- **Modern code quality**: [ruff](https://github.com/charliermarsh/ruff) (with Pylint rules), [mypy](https://mypy.readthedocs.io/), [deptry](https://github.com/shaneholloman/deptry/), and [prettier](https://prettier.io/)
+- **CI/CD integration**: [GitHub Actions](https://github.com/features/actions) workflows configured
+- **Git hooks**: Automated checks with [pre-commit](https://pre-commit.com/)
+- **Testing**: [pytest](https://docs.pytest.org/) and [codecov](https://about.codecov.io/)
+- **Documentation**: Generated with [MkDocs](https://www.mkdocs.org/)
+- **Publishing**: Automated PyPI publishing through GitHub releases
+- **Containerization**: Development and deployment with [Docker](https://www.docker.com/)
+- **Dev environments**: Consistent setup with [VSCode devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)
+- **Multi-Python testing**: [tox-uv](https://github.com/tox-dev/tox-uv) for all supported Python versions
 
-On your local machine, navigate to the directory in which you want to
-create a project directory, and run the following command:
+## Installation
 
-```bash
-uvx cookiecutter https://github.com/shaneholloman/uvi.git
-```
-
-or if you don't have `uv` installed yet:
+Install UVI using UV (recommended):
 
 ```bash
-pip install cookiecutter
-cookiecutter https://github.com/shaneholloman/uvi.git
+uv tool install uvi
 ```
 
-Follow the prompts to configure your project. Once completed, a new directory containing your project will be created. Then navigate into your newly created project directory and follow the instructions in the `README.md` to complete the setup of your project.
+Alternative installation methods:
 
-> [!TIP]
-> While direct Cookiecutter usage is supported, using `uvi` is the recommended approach for most users. See [Direct Cookiecutter Usage](features/direct-cookiecutter.md) for more details on why both options are offered.
+```bash
+# Using pipx
+pipx install uvi
+
+# Using pip
+pip install --user uvi
+```
+
+## Usage
+
+Creating a new project couldn't be simpler:
+
+```bash
+# Navigate to where you want to create your project
+cd ~/projects
+
+# Run UVI
+uvi
+```
+
+Follow the prompts to configure your project. UVI will:
+
+1. Auto-detect your user information from git or GitHub CLI
+2. Generate a complete project structure
+3. Set up all the configured tools and infrastructure
+
+Once completed, you'll have a fully functional project ready for development. An example of a project generated with UVI can be found [here](https://github.com/shaneholloman/uvi-example).
+
+> [!NOTE]
+> Advanced users can also use Cookiecutter directly with UVI's template. See [Direct Cookiecutter Usage](features/direct-cookiecutter.md) for more details on why both options are available.
