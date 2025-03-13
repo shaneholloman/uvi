@@ -170,11 +170,18 @@ The current focus is on three main improvements:
 
 ## Next Steps
 
-1. Implement Tox to Nox migration (detailed plan in docs/briefs/tox-to-nox-migration.md)
-2. Fix remaining linting issues in the info/ directory using Ruff
-3. Add python_version selection option
-4. Consider implementing other items from the TODO list in future work
-5. Version bump and PyPI publish with all improvements
+1. **Highest Priority:** Implement smarter template download behavior to eliminate the re-download prompt
+   - Use Cookiecutter's `force_download` parameter with internet connectivity detection
+   - If online: Silently pull the latest template version
+   - If offline: Use the cached version without prompting
+   - Documented in docs/briefs/cli-enhancements.md
+
+2. Implement Tox to Nox migration (detailed plan in docs/briefs/tox-to-nox-migration.md)
+3. Fix remaining linting issues in the info/ directory using Ruff
+4. Add python_version selection option
+5. Consider implementing other CLI enhancements from docs/briefs/cli-enhancements.md
+6. Consider implementing other items from the TODO list in future work
+7. Version bump and PyPI publish with all improvements
 
 ## Planned Implementation: Tox to Nox Migration
 

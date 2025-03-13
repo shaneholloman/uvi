@@ -151,9 +151,43 @@ Most of these could be implemented as direct passes to Cookiecutter's API, makin
 
 Based on user feedback and enhancement value, the following features are recommended as priority implementations:
 
-1. **Quick/Silent Mode** - Provides immediate value for common use cases
-2. **Parameter Overrides** - Offers flexibility without complexity
-3. **Non-Interactive Mode** - Essential for automation
-4. **Configuration Profiles** - Streamlines workflow for different project types
+### Highest Priority
 
-These four enhancements would significantly improve the user experience while maintaining the simplicity that makes UVI valuable.
+1. **Smarter Template Download Behavior** - Eliminate the annoying re-download prompt
+
+   ```bash
+   # Current behavior: Always asks if you want to re-download the template
+   # Improved behavior: Automatically use latest if online, use cached if offline
+   ```
+
+   This would use Cookiecutter's `force_download` parameter with internet connectivity detection to:
+   - If online: Silently pull the latest template version
+   - If offline: Use the cached version without prompting
+
+   Implementation would involve checking internet connectivity and setting the appropriate Cookiecutter parameters:
+
+   ```python
+   try:
+       # Try to connect to a reliable site
+       requests.get("https://pypi.org", timeout=1)
+       # Online - force download latest
+       force_download = True
+   except requests.RequestException:
+       # Offline - use cached version without asking
+       force_download = False
+
+   cookiecutter(
+       template,
+       force_download=force_download,
+       # other params...
+   )
+   ```
+
+### High Priority
+
+- **Quick/Silent Mode** - Provides immediate value for common use cases
+- **Parameter Overrides** - Offers flexibility without complexity
+- **Non-Interactive Mode** - Essential for automation
+- **Configuration Profiles** - Streamlines workflow for different project types
+
+These enhancements would significantly improve the user experience while maintaining the simplicity that makes UVI valuable.
