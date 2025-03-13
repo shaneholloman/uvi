@@ -37,7 +37,7 @@
 
 ## Current Status
 
-- Version 0.3.3 is published and functional
+- Version 0.5.0 is published and functional
 - Basic project generation works reliably
 - All advertised features are implemented
 - Documentation is in place

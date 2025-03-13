@@ -21,7 +21,7 @@ This project fully embraces UV's philosophy - we're not just using UV, **we're b
 > [!IMPORTANT]
 > This project 'works' but is far from perfect!
 
-See todos: [TODO.md](./TODO.md)
+See Progress: [progress](./memory-bank/progress.md)
 
 ## Features
 
