@@ -68,6 +68,7 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - tables
   - toc:
       permalink: true
   - pymdownx.arithmatex:
@@ -125,9 +126,8 @@ validation:
   unrecognized_links: warn
   anchors: warn
 
-# CSS is commented out as requested
-# extra_css:
-#   - stylesheets/extra.css
+extra_css:
+  - stylesheets/extra.css
 
 extra:
   social:
