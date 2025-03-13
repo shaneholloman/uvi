@@ -180,8 +180,9 @@ The current focus is on three main improvements:
 3. Fix remaining linting issues in the info/ directory using Ruff
 4. Add python_version selection option
 5. Consider implementing other CLI enhancements from docs/briefs/cli-enhancements.md
-6. Consider implementing other items from the TODO list in future work
-7. Version bump and PyPI publish with all improvements
+6. Consider implementing Makefile enhancements documented in docs/briefs/makefile-enhancements.md
+7. Consider implementing other items from the TODO list in future work
+8. Version bump and PyPI publish with all improvements
 
 ## Planned Implementation: Tox to Nox Migration
 
