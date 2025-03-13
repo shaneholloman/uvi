@@ -23,10 +23,4 @@ repos:
       - id: prettier
         exclude: ^{{cookiecutter.project_name}}
 
-  - repo: https://github.com/PyCQA/pylint
-    rev: "v3.0.3"
-    hooks:
-      - id: pylint
-        exclude: ^{{cookiecutter.project_name}}
-        args: [--rcfile=.pylintrc]
-        additional_dependencies: [cookiecutter]
+  # Pylint has been removed in favor of Ruff, which includes Pylint-equivalent rules

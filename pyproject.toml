@@ -31,7 +31,7 @@ Homepage = "https://shaneholloman.github.io/uvi/"
 
 [dependency-groups]
 dev = [
-  "pylint>=3.0.0",
+  # "pylint>=3.0.0", # Replaced by Ruff with Pylint-equivalent rules
   "pytest>=7.2.0",
   "pre-commit>=2.20.0",
   "pytest-cookies>=0.6.1",
@@ -129,6 +129,11 @@ select = [
   "RUF",
   # tryceratops
   "TRY",
+  # Pylint-equivalent rules (replaces Pylint)
+  "PLC", # pylint-convention
+  "PLE", # pylint-error
+  "PLR", # pylint-refactor
+  "PLW", # pylint-warning
 ]
 ignore = [
   # LineTooLong

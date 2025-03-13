@@ -1,7 +1,7 @@
 {
-  "author": "Shane Holloman",
-  "email": "shaneholloman@gmail.com",
-  "author_github_handle": "shaneholloman",
+  "author": "Your Name",
+  "email": "your.email@example.com",
+  "author_github_handle": "your-github-handle",
   "project_name": "example-project",
   "project_slug": "{{uvi.project_name|lower|replace('-', '_')}}",
   "project_description": "This is a template repository for Python projects that use uv for their dependency management.",
