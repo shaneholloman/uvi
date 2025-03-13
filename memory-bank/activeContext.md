@@ -181,8 +181,9 @@ The current focus is on three main improvements:
 4. Add python_version selection option
 5. Consider implementing other CLI enhancements from docs/briefs/cli-enhancements.md
 6. Consider implementing Makefile enhancements documented in docs/briefs/makefile-enhancements.md
-7. Consider implementing other items from the TODO list in future work
-8. Version bump and PyPI publish with all improvements
+7. Discuss and develop a strategy for Cookiecutter maintenance concerns documented in docs/briefs/uvi-future-strategy.md
+8. Consider implementing other items from the TODO list in future work
+9. Version bump and PyPI publish with all improvements
 
 ## Planned Implementation: Tox to Nox Migration
 
