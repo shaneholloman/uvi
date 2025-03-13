@@ -1,4 +1,4 @@
-# UVI Project: Tox to Nox Migration Brief
+# Tox to Nox Migration Brief
 
 ## Project Context
 
