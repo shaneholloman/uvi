@@ -1,6 +1,6 @@
 [project]
 name = "uvi"
-version = "0.3.3"
+version = "0.4.0"
 description = "A python cookiecutter application to create a new python project that uses uv to manage its dependencies."
 authors = [{ name = "Shane Holloman", email = "shaneholloman@gmail.com" }]
 readme = "README.md"
