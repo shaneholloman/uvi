@@ -1,4 +1,6 @@
-# Practical Cookiecutter Usage Examples
+# Cookiecutter Examples
+
+Practical Cookiecutter Usage Examples
 
 This document provides practical examples of using Cookiecutter directly with UVI, demonstrating the flexibility discussed in [Direct Cookiecutter Usage](direct-cookiecutter.md).
 
@@ -88,19 +90,19 @@ This is useful for organizing multiple generated projects in a structured way.
 
 All parameters defined in UVI's cookiecutter.json file:
 
-| Parameter | Description | Example Values |
-|-----------|-------------|---------------|
-| author | Author name | "Your Name" |
-| email | Author email | "<your.email@example.com>" |
-| author_github_handle | GitHub username | "your-github-handle" |
-| project_name | Project name | "example-project" |
-| project_slug | Slug for import (auto-generated) | "example_project" |
-| project_description | Brief description | "This is a template repository..." |
-| include_github_actions | Add GitHub Actions | "y" or "n" |
-| publish_to_pypi | Configure PyPI publishing | "y" or "n" |
-| deptry | Add deptry for dependency checking | "y" or "n" |
-| mkdocs | Add MkDocs documentation | "y" or "n" |
-| codecov | Add code coverage | "y" or "n" |
-| dockerfile | Add Dockerfile | "y" or "n" |
-| devcontainer | Add VS Code devcontainer | "y" or "n" |
-| open_source_license | License type | "MIT license", "BSD license", etc. |
+| Parameter              | Description                        | Example Values                     |
+| ---------------------- | ---------------------------------- | ---------------------------------- |
+| author                 | Author name                        | "Your Name"                        |
+| email                  | Author email                       | "<your.email@example.com>"         |
+| author_github_handle   | GitHub username                    | "your-github-handle"               |
+| project_name           | Project name                       | "example-project"                  |
+| project_slug           | Slug for import (auto-generated)   | "example_project"                  |
+| project_description    | Brief description                  | "This is a template repository..." |
+| include_github_actions | Add GitHub Actions                 | "y" or "n"                         |
+| publish_to_pypi        | Configure PyPI publishing          | "y" or "n"                         |
+| deptry                 | Add deptry for dependency checking | "y" or "n"                         |
+| mkdocs                 | Add MkDocs documentation           | "y" or "n"                         |
+| codecov                | Add code coverage                  | "y" or "n"                         |
+| dockerfile             | Add Dockerfile                     | "y" or "n"                         |
+| devcontainer           | Add VS Code devcontainer           | "y" or "n"                         |
+| open_source_license    | License type                       | "MIT license", "BSD license", etc. |
