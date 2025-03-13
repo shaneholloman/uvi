@@ -170,6 +170,20 @@ The following steps must be completed before any coding:
 - Document changes in the release notes
 - Ensure all tests pass before releasing
 
+## Post-Release Actions
+
+- Upgrade the global installation of UVI to the latest published version:
+
+  ```bash
+  uv tool install uvi --upgrade
+  ```
+
+- Verify the installation was successful:
+
+  ```bash
+  uvi --version
+  ```
+
 ## Security Considerations
 
 - Never include hardcoded credentials
