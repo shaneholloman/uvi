@@ -10,7 +10,7 @@ The current focus is on two main improvements:
 
 ## Recent Changes
 
-- The project is currently at version 0.4.0
+- The project is currently at version 0.5.0
 - Updated all dependencies to their latest versions (March 2025)
 - Added UV commands to .clinerules file for checking latest package versions
 - A memory bank structure has been established to document the project systematically
@@ -20,6 +20,11 @@ The current focus is on two main improvements:
 - Migrated from Pylint to Ruff with Pylint-equivalent rules
 - Removed .pylintrc and updated all related documentation files
 - Updated code to follow modern Python best practices for error handling
+- Upgraded cookiecutter dependency from 2.1.1 to 2.6.0
+- Updated Python target version from 3.9 to 3.10 in the main project
+- Ensured dependency version parity between the main project and the template
+- Synchronized pre-commit hook versions between the main project and template
+- Added Pylint-equivalent rules to the template's Ruff configuration
 
 ## Implementation Details: Dependency Updates
 

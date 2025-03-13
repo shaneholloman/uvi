@@ -1,13 +1,13 @@
 [project]
 name = "uvi"
-version = "0.4.0"
+version = "0.5.0"
 description = "A python cookiecutter application to create a new python project that uses uv to manage its dependencies."
 authors = [{ name = "Shane Holloman", email = "shaneholloman@gmail.com" }]
 readme = "README.md"
 keywords = ['cookiecutter', 'template', 'uv']
 requires-python = ">=3.10,<4.0"
 dependencies = [
-  "cookiecutter>=2.1.1",
+  "cookiecutter>=2.6.0",
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -92,7 +92,7 @@ extend_exclude = [
 DEP002 = ["cookiecutter"]
 
 [tool.ruff]
-target-version = "py39"
+target-version = "py310"
 line-length = 120
 fix = true
 

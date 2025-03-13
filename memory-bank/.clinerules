@@ -95,6 +95,44 @@ The following steps must be completed before any coding:
    - Consider using git stash/branches to preserve original state
    - Provide concrete evidence of feature improvement
 
+## Direct Testing Instructions
+
+- Test the current codebase with UV directly:
+
+  ```bash
+  uv run python -m uvi.cli --version  # Verify version number
+  uv run python -m uvi.cli            # Run project creation wizard
+  ```
+
+- Validate project version parity:
+
+  ```bash
+  # Check version matches in both locations
+  grep -A 1 "version" pyproject.toml
+  grep "__version__" uvi/__init__.py
+  ```
+
+- Verify template dependency versions match main project:
+
+  ```bash
+  # Compare dependency versions
+  diff -u pyproject.toml example-project/pyproject.toml
+  ```
+
+- Verify template functionality:
+
+  ```bash
+  cd example-project
+  uv sync              # Install dependencies
+  pytest               # Run tests
+  ```
+
+- Testing after changes:
+  1. Create a clean test environment: `mkdir -p /tmp/uvi-test && cd /tmp/uvi-test`
+  2. Run from source: `cd <project-root> && uv run python -m uvi.cli`
+  3. Verify the generated project: Check version numbers, dependencies, and configuration
+  4. Run basic functionality tests on the generated project
+
 ## Testing Strategy
 
 - Use pytest for all tests
