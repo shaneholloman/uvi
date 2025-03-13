@@ -32,18 +32,18 @@ Homepage = "https://shaneholloman.github.io/uvi/"
 [dependency-groups]
 dev = [
   # "pylint>=3.0.0", # Replaced by Ruff with Pylint-equivalent rules
-  "pytest>=7.2.0",
-  "pre-commit>=2.20.0",
-  "pytest-cookies>=0.6.1",
-  "tox-uv>=1.11.3",
-  "deptry>=0.20.0",
-  "mypy>=0.991",
-  "pytest-cov>=4.0.0",
-  "ruff>=0.6.9",
-  "mkdocs-material>=9.0.0",
-  "mkdocstrings[python]>=0.19.0",
-  "build>=1.0.3",
-  "twine>=4.0.2",
+  "pytest>=8.3.5",
+  "pre-commit>=4.1.0",
+  "pytest-cookies>=0.7.0",
+  "tox-uv>=1.25.0",
+  "deptry>=0.23.0",
+  "mypy>=1.15.0",
+  "pytest-cov>=6.0.0",
+  "ruff>=0.9.10",
+  "mkdocs-material>=9.6.7",
+  "mkdocstrings[python]>=0.29.0",
+  "build>=1.2.2.post1",
+  "twine>=6.1.0",
 ]
 
 [build-system]

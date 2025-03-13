@@ -11,11 +11,27 @@ The following steps must be completed before any coding:
    - MyPy: 1.14.1 or later (`mypy --version`)
    - Pre-commit: 4.0.1 or later (`pre-commit --version`)
 
-2. Install dependencies:
+## UV Commands
+
+- Check the latest available version of a specific package:
+
+  ```bash
+  uv tree --package <package> --outdated
+  ```
+
+  Example: `uv tree --package ruff --outdated`
+
+- Check all outdated packages in the project:
+
+  ```bash
+  uv tree --outdated
+  ```
+
+- Install dependencies:
    - Run `uv sync` to install all project dependencies
    - Verify with `pytest -v` that tests pass
 
-3. Set up development environment:
+- Set up development environment:
    - Install pre-commit hooks: `pre-commit install`
    - Ensure git is configured with user name and email
 
@@ -89,6 +105,10 @@ The following steps must be completed before any coding:
 
 ## Markdown Style Patterns
 
+- Never use duplicated headings
+- Use a single blank line between paragraphs
+- Use a single blank line between headings and paragraphs
+- Use a single blank line between paragraphs and lists
 - No line length restriction (unlike code files)
 - Include a blank line after any heading or subheading
 - Include a blank line between numbered/bulleted list items and their indented content

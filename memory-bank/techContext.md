@@ -5,18 +5,19 @@
 ### Core Dependencies
 
 - **Python**: 3.10+ (supports 3.10, 3.11, 3.12, 3.13)
-- **Cookiecutter**: Template engine for project generation
-- **UV**: Modern Python package manager used for dependency management
+- **Cookiecutter**: 2.6.0 - Template engine for project generation
+- **UV**: 0.6.6 - Modern Python package manager used for dependency management
 
 ### Development Dependencies
 
-- **Ruff**: Fast Python linter and formatter (includes Pylint-equivalent rules)
-- **MyPy**: Static type checking
-- **Pytest**: Testing framework
-- **Pre-commit**: Git hook framework
-- **Tox-UV**: Testing against multiple Python versions with UV
-- **MkDocs**: Documentation generator
-- **Deptry**: Dependency checking tool
+- **Ruff**: 0.9.10 - Fast Python linter and formatter (includes Pylint-equivalent rules)
+- **MyPy**: 1.15.0 - Static type checking
+- **Pytest**: 8.3.5 - Testing framework
+- **Pre-commit**: 4.1.0 - Git hook framework
+- **Tox-UV**: 1.25.0 - Testing against multiple Python versions with UV
+- **MkDocs-Material**: 9.6.7 - Documentation generator with Material theme
+- **MkDocstrings**: 0.29.0 - API documentation generator
+- **Deptry**: 0.23.0 - Dependency checking tool
 
 ### Generated Project Technologies
 
@@ -82,18 +83,18 @@ The project uses several development dependencies:
 ```python
 dev = [
   # Pylint has been replaced by Ruff with Pylint-equivalent rules
-  "pytest>=7.2.0",
-  "pre-commit>=2.20.0",
-  "pytest-cookies>=0.6.1",
-  "tox-uv>=1.11.3",
-  "deptry>=0.20.0",
-  "mypy>=0.991",
-  "pytest-cov>=4.0.0",
-  "ruff>=0.6.9",
-  "mkdocs-material>=9.0.0",
-  "mkdocstrings[python]>=0.19.0",
-  "build>=1.0.3",
-  "twine>=4.0.2",
+  "pytest>=8.3.5",
+  "pre-commit>=4.1.0",
+  "pytest-cookies>=0.7.0",
+  "tox-uv>=1.25.0",
+  "deptry>=0.23.0",
+  "mypy>=1.15.0",
+  "pytest-cov>=6.0.0",
+  "ruff>=0.9.10",
+  "mkdocs-material>=9.6.7",
+  "mkdocstrings[python]>=0.29.0",
+  "build>=1.2.2.post1",
+  "twine>=6.1.0",
 ]
 ```
 

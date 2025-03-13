@@ -10,7 +10,9 @@ The current focus is on two main improvements:
 
 ## Recent Changes
 
-- The project is currently at version 0.3.3
+- The project is currently at version 0.4.0
+- Updated all dependencies to their latest versions (March 2025)
+- Added UV commands to .clinerules file for checking latest package versions
 - A memory bank structure has been established to document the project systematically
 - Core documentation files have been created to capture project knowledge
 - The .clinerules file was updated with comprehensive feature implementation workflow
@@ -18,6 +20,33 @@ The current focus is on two main improvements:
 - Migrated from Pylint to Ruff with Pylint-equivalent rules
 - Removed .pylintrc and updated all related documentation files
 - Updated code to follow modern Python best practices for error handling
+
+## Implementation Details: Dependency Updates
+
+### Latest Version Update (March 2025)
+
+- Updated all dev dependencies to their latest versions:
+  - pytest: 8.3.5 (from 7.2.0)
+  - pre-commit: 4.1.0 (from 2.20.0)
+  - pytest-cookies: 0.7.0 (from 0.6.1)
+  - tox-uv: 1.25.0 (from 1.11.3)
+  - deptry: 0.23.0 (from 0.20.0)
+  - mypy: 1.15.0 (from 0.991)
+  - pytest-cov: 6.0.0 (from 4.0.0)
+  - ruff: 0.9.10 (from 0.6.9)
+  - mkdocs-material: 9.6.7 (from 9.0.0)
+  - mkdocstrings[python]: 0.29.0 (from 0.19.0)
+  - build: 1.2.2.post1 (from 1.0.3)
+  - twine: 6.1.0 (from 4.0.2)
+
+- Documented new UV commands for checking latest package versions:
+
+  ```bash
+  uv tree --package <package> --outdated  # Check specific package
+  uv tree --outdated                     # Check all packages
+  ```
+
+- Updated documentation in memory-bank/techContext.md to reflect current versions
 
 ## Implementation Details: User Info Prefill
 
@@ -114,7 +143,7 @@ The current focus is on two main improvements:
 - Simplified pre-commit configuration
 - Follows Ruff's recommended practices for error handling
 
-### Key Improvements
+### Linting System Improvements
 
 - Faster linting process (Ruff is significantly faster than Pylint)
 - Single source of truth for linting rules
