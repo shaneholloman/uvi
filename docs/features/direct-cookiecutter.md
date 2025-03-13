@@ -85,3 +85,6 @@ cookiecutter https://github.com/shaneholloman/uvi.git
 ```
 
 This gives you all the power of UVI's templates with the flexibility of Cookiecutter's interface.
+
+> [!TIP]
+> For practical use cases and specific examples of how to leverage direct Cookiecutter usage in various scenarios, see the [Cookiecutter Examples](cookiecutter-examples.md) document.
