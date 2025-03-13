@@ -44,7 +44,7 @@
 
 ## Known Issues
 
-- ✅ Automatic prefill of user information implemented (FIXED)
+- [x] Automatic prefill of user information implemented (FIXED)
 - No check for required tools (gh CLI, uv CLI)
 - ~No option to add pylint in prompt arguments~ (Not needed - migrated to Ruff with Pylint-equivalent rules)
 - No python_version selection option
