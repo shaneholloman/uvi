@@ -7,8 +7,7 @@ The following steps must be completed before any coding:
 1. Verify toolchain versions:
    - Python: 3.13.2 or compatible
    - UV: 0.5.14 or later (`uv --version`)
-   - Ruff: 0.8.5 or later (`ruff --version`)
-   - Pylint: 3.3.3 or later (`pylint --version`)
+   - Ruff: 0.8.5 or later (`ruff --version`) - includes Pylint-equivalent rules
    - MyPy: 1.14.1 or later (`mypy --version`)
    - Pre-commit: 4.0.1 or later (`pre-commit --version`)
 
@@ -27,6 +26,8 @@ The following steps must be completed before any coding:
 - Follow PEP 8 conventions with a line length of 120 characters
 - Group imports: stdlib first, third-party second, local modules third
 - Use descriptive variable names and document complex logic
+- NEVER use emojis in any code, documentation, or comments
+- Use checkbox format `- [x]` for completed items and `- [ ]` for incomplete items
 
 ## Project-Specific Patterns
 
@@ -59,7 +60,7 @@ The following steps must be completed before any coding:
 
 2. **Implement Changes**
    - Make code modifications with appropriate error handling
-   - Run linting and static analysis (ruff, mypy, pylint)
+   - Run linting and static analysis (ruff, mypy)
    - Run test suite to verify unit/integration tests pass
 
 3. **Verify Implementation**
