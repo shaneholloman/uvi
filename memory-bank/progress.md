@@ -40,13 +40,13 @@
 - Version 0.5.0 is published and functional
 - Basic project generation works reliably
 - All advertised features are implemented
+- Pylint migrated to Ruff with Pylint-equivalent rules)
 - Documentation is in place
 
 ## Known Issues
 
 - [x] Automatic prefill of user information implemented (FIXED)
 - No check for required tools (gh CLI, uv CLI)
-- ~No option to add pylint in prompt arguments~ (Not needed - migrated to Ruff with Pylint-equivalent rules)
 - No python_version selection option
 - Linting issues in info/ directory (using Ruff)
 - Documentation-deploy function in Makefile needs improvement
