@@ -34,3 +34,6 @@ cookiecutter https://github.com/shaneholloman/uvi.git
 ```
 
 Follow the prompts to configure your project. Once completed, a new directory containing your project will be created. Then navigate into your newly created project directory and follow the instructions in the `README.md` to complete the setup of your project.
+
+> [!TIP]
+> While direct Cookiecutter usage is supported, using `uvi` is the recommended approach for most users. See [Direct Cookiecutter Usage](features/direct-cookiecutter.md) for more details on why both options are offered.
