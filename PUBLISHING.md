@@ -1,6 +1,8 @@
 # Publishing to PyPI
 
-> WIP!
+## Version 0.4.0+ Updates
+
+This document has been updated with the latest publishing workflow information.
 
 This document outlines two methods for publishing the `uvi` package to PyPI.
 
@@ -18,18 +20,45 @@ version = "x.y.z"  # Update this version number
 
 This repository is configured to automatically publish to PyPI when a new release is created on GitHub using trusted publishing.
 
-1. Ensure your changes are committed and pushed to the main branch
-2. **IMPORTANT**: Update the version in `pyproject.toml` (see Version Management above)
-3. Create a new release on GitHub:
+### Prerequisites
+
+- You must have write access to the GitHub repository
+- PyPI project must have trusted publishing configured for this repository
+- All code changes must be committed and pushed to the main branch
+
+### Steps to Publish a New Release
+
+1. **Update Version Numbers**:
+
+   - Update the version in `pyproject.toml` under the `[project]` section
+   - Update the version in `uvi/__init__.py` (`__version__ = "x.y.z"`)
+   - Commit and push these changes to the main branch
+
+2. **Create a New Release on GitHub**:
+
    - Go to <https://github.com/shaneholloman/uvi/releases>
    - Click "Draft a new release"
-   - Create a new tag (e.g., v0.1.0)
-   - Write release notes
+   - Create a new tag matching your version (e.g., `v0.4.0`)
+   - Set the title to the version number (e.g., "UVI 0.4.0")
+   - Write detailed release notes describing the changes
    - Click "Publish release"
-4. The GitHub Actions workflow will automatically:
-   - Build the package
-   - Publish to PyPI using trusted publishing
-   - Deploy the documentation
+
+3. **Monitor GitHub Actions Workflow**:
+   - The workflow will automatically start when the release is published
+   - You can monitor progress at <https://github.com/shaneholloman/uvi/actions>
+   - The workflow includes three jobs:
+     - Test: Runs pytest to verify package functionality
+     - Deploy Docs: Updates documentation on GitHub Pages
+     - Deploy PyPI: Builds and publishes the package to PyPI
+
+### What the Workflow Does
+
+The GitHub Actions workflow will automatically:
+
+- Run tests to verify the package
+- Build the package using UV
+- Publish to PyPI using trusted publishing
+- Deploy the documentation to GitHub Pages
 
 ## Method 2: Manual Publishing
 

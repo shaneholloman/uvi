@@ -5,36 +5,60 @@ on:
     types: [published]
 
 jobs:
-  deploy-docs:
+  test:
+    name: Test Package
     runs-on: ubuntu-24.04
     steps:
-      - name: Check out
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Setup environment
+      - name: Setup Python environment
         uses: ./.github/actions/setup-python-env
+        with:
+          python-version: "3.12"
+          uv-version: "0.5.14"
+
+      - name: Run tests
+        run: uv run pytest
+
+  deploy-docs:
+    name: Deploy Documentation
+    runs-on: ubuntu-24.04
+    needs: [test]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python environment
+        uses: ./.github/actions/setup-python-env
+        with:
+          python-version: "3.12"
+          uv-version: "0.5.14"
 
       - name: Deploy documentation
         run: uv run mkdocs gh-deploy --force
 
   deploy-pypi:
+    name: Publish to PyPI
     runs-on: ubuntu-24.04
+    needs: [test]
     permissions:
       id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
     steps:
-      - name: Check out
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Setup Python environment
+        uses: ./.github/actions/setup-python-env
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+          uv-version: "0.5.14"
 
-      - name: Install build
-        run: pip install build
-
-      - name: Build package
-        run: python -m build
+      - name: Build package using UV
+        run: uvx --from build pyproject-build --installer uv
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/
+          verbose: true
