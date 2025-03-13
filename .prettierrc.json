@@ -12,6 +12,13 @@
         "parser": "yaml",
         "tabWidth": 2
       }
+    },
+    {
+      "files": ["*.md"],
+      "options": {
+        "printWidth": 0,
+        "proseWrap": "never"
+      }
     }
   ]
 }

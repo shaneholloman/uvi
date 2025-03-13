@@ -87,12 +87,23 @@ The following steps must be completed before any coding:
 - Include both positive and negative test cases
 - CRUCIAL: Execute real-world examples - passing tests is NOT sufficient verification
 
+## Markdown Style Patterns
+
+- No line length restriction (unlike code files)
+- Include a blank line after any heading or subheading
+- Include a blank line between numbered/bulleted list items and their indented content
+- For lists with sub-items, include a blank line after the parent item
+- Follow a consistent heading hierarchy (# for titles, ## for sections, etc.)
+- Use fenced code blocks with language specifiers (```python instead of just```)
+- Ensure all files end with a blank line
+
 ## Documentation Conventions
 
 - Document all public functions with Google-style docstrings
 - Include Args and Returns sections in docstrings
 - Update README.md when adding features
 - Add feature documentation to the corresponding files in docs/
+- Follow the Markdown Style Patterns defined above for all documentation files
 
 ## Release Process
 
