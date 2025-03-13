@@ -14,16 +14,19 @@ flowchart TD
 ### Core Components
 
 1. **CLI Interface (uvi/cli.py)**
+
    - Entry point for user interaction
    - Parses command-line arguments
    - Invokes cookiecutter with the appropriate template
 
 2. **Template System**
+
    - Uses cookiecutter for templating
    - Configuration defined in cookiecutter.json
    - Handles variable substitution
 
 3. **Generation Hooks**
+
    - Pre-generation validation (hooks/pre_gen_project.py)
    - Post-generation cleanup (hooks/post_gen_project.py)
    - Conditional file removal based on user choices
@@ -35,16 +38,19 @@ flowchart TD
 ## Key Technical Decisions
 
 1. **Cookiecutter as Template Engine**
+
    - Mature, widely-used templating system
    - Supports pre/post generation hooks
    - Handles complex templating requirements
 
 2. **UV for Dependency Management**
+
    - Modern, fast Python package manager
    - Better performance than pip/poetry
    - Core focus of the generated projects
 
 3. **CLI-First Approach**
+
    - Simple command-line interface
    - No complex GUI or web interface
    - Focus on developer experience
@@ -57,14 +63,17 @@ flowchart TD
 ## Design Patterns in Use
 
 1. **Template Method Pattern**
+
    - Hooks define the skeleton of operations
    - Concrete implementations determined by user choices
 
 2. **Factory Pattern**
+
    - Creates project structure based on configuration
    - Different "products" (features) based on user input
 
 3. **Command Pattern**
+
    - CLI executes a series of operations
    - Encapsulates all the logic needed to perform actions
 
