@@ -2,11 +2,13 @@
 
 ## Current Work Focus
 
-The current focus is on two main improvements:
+The current focus is on three main improvements:
 
 1. Implementing the ability to prefill the cookiecutter prompts with the user's git username and email. This feature has been successfully implemented using proper implementation workflow.
 
 2. Modernizing the linting system by migrating from Pylint to Ruff with Pylint-equivalent rules. This improves code quality, speeds up linting, and simplifies the development workflow.
+
+3. Planning migration from Tox to Nox for testing. This will provide better UV integration, increased flexibility through Python-native configuration, and a more modern architecture for the testing system.
 
 ## Recent Changes
 
@@ -168,10 +170,35 @@ The current focus is on two main improvements:
 
 ## Next Steps
 
-1. Fix remaining linting issues in the info/ directory using Ruff
-2. Add python_version selection option
-3. Consider implementing other items from the TODO list in future work
-4. Version bump and PyPI publish with all improvements
+1. Implement Tox to Nox migration (detailed plan in docs/briefs/tox-to-nox-migration.md)
+2. Fix remaining linting issues in the info/ directory using Ruff
+3. Add python_version selection option
+4. Consider implementing other items from the TODO list in future work
+5. Version bump and PyPI publish with all improvements
+
+## Planned Implementation: Tox to Nox Migration
+
+### Motivation
+
+- Replace Tox with Nox for testing infrastructure
+- Benefit from Python-native configuration offered by Nox
+- Better integration with UV (no need for tox-uv plugin)
+- More flexible approach to test management
+
+### Migration Strategy
+
+- Develop Noxfile.py with equivalent functionality to current tox.ini
+- Run parallel testing to ensure identical results
+- Update cookiecutter template to use Nox instead of Tox
+- Update documentation and guides
+- Remove Tox dependencies once migration is verified successful
+
+### Expected Benefits
+
+- More intuitive test configuration using Python code
+- Better code organization through function-based approach
+- Direct UV command execution without plugins
+- Modern testing architecture aligned with project goals
 
 ## Active Decisions
 
@@ -179,3 +206,4 @@ The current focus is on two main improvements:
 - Don't attempt to fetch GitHub-specific information (like the GitHub handle) at this stage
 - Maintain backward compatibility with current usage patterns
 - Implement error handling for cases where git isn't available or config values aren't set
+- Migrate from Tox to Nox while maintaining feature parity during transition

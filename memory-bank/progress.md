@@ -40,8 +40,9 @@
 - Version 0.5.0 is published and functional
 - Basic project generation works reliably
 - All advertised features are implemented
-- Pylint migrated to Ruff with Pylint-equivalent rules)
+- Pylint migrated to Ruff with Pylint-equivalent rules
 - Documentation is in place
+- Planning migration from Tox to Nox for testing (detailed plan in docs/briefs/tox-to-nox-migration.md)
 
 ## Known Issues
 
@@ -59,13 +60,17 @@ From the TODO list, the following items need to be implemented:
 1. **Completed**
 
    - [x] Implementation of user information prefill for cookiecutter prompts (GitHub CLI + git + fallbacks)
+   - [x] ~Add pylint option to prompt arguments~ (Obsolete - migrated to Ruff with Pylint-equivalent rules)
 
-2. **Future Work**
+2. **In Progress**
+
+   - [ ] Migrate from Tox to Nox for testing infrastructure
+
+3. **Future Work**
    - [ ] Add trusted PyPI publishing to the project
    - [ ] Ensure project description is printed to the GitHub site repo page
    - [ ] Add checks for gh CLI and uv CLI installation
    - [ ] Fix linting issues in info/ directory using Ruff
-   - [x] ~Add pylint option to prompt arguments~ (Obsolete - migrated to Ruff with Pylint-equivalent rules)
    - [ ] Add python_version selection option
    - [ ] Add codemapper option
    - [ ] Add .env file handling capability

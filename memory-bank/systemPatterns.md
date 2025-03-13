@@ -81,6 +81,51 @@ flowchart TD
    - Configuration options add or remove features
    - Base project enhanced with optional components
 
+## Testing Architecture
+
+The testing infrastructure is a key component of both UVI itself and the generated projects.
+
+### Current Pattern: Tox
+
+```mermaid
+flowchart TD
+    Tox[Tox] --> EnvCreate[Create Virtual Environments]
+    EnvCreate --> EnvPy310[Python 3.10]
+    EnvCreate --> EnvPy311[Python 3.11]
+    EnvCreate --> EnvPy312[Python 3.12]
+    EnvCreate --> EnvPy313[Python 3.13]
+    EnvPy310 & EnvPy311 & EnvPy312 & EnvPy313 --> UVSync[UV Sync Dependencies]
+    UVSync --> RunTests[Run Test Suite]
+    RunTests --> Coverage[Generate Coverage]
+    RunTests --> TypeChecking[Type Checking]
+```
+
+- Configuration-based via tox.ini
+- Declarative environment specification
+- Integration with GitHub Actions via gh-actions section
+- Uses tox-uv plugin for UV integration
+
+### Planned Pattern: Nox
+
+```mermaid
+flowchart TD
+    Nox[Noxfile.py] --> Sessions[Define Sessions]
+    Sessions --> TestSession[Test Sessions]
+    Sessions --> LintSession[Lint Sessions]
+    Sessions --> DocsSession[Docs Sessions]
+    TestSession --> Py310Test[Python 3.10 Tests]
+    TestSession --> Py311Test[Python 3.11 Tests]
+    TestSession --> Py312Test[Python 3.12 Tests]
+    TestSession --> Py313Test[Python 3.13 Tests]
+    Py310Test & Py311Test & Py312Test & Py313Test --> UVSync[UV Sync]
+    UVSync --> RunTests[Run Test Suite]
+```
+
+- Python-native configuration via noxfile.py
+- Programmatic session definition with explicit dependency management
+- Direct UV integration without plugins
+- Enhanced flexibility through Python functions
+
 ## Component Relationships
 
 ```mermaid
