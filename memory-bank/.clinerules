@@ -1,5 +1,25 @@
 # UVI Project Intelligence
 
+## Environment Setup
+
+The following steps must be completed before any coding:
+
+1. Verify toolchain versions:
+   - Python: 3.13.2 or compatible
+   - UV: 0.5.14 or later (`uv --version`)
+   - Ruff: 0.8.5 or later (`ruff --version`)
+   - Pylint: 3.3.3 or later (`pylint --version`)
+   - MyPy: 1.14.1 or later (`mypy --version`)
+   - Pre-commit: 4.0.1 or later (`pre-commit --version`)
+
+2. Install dependencies:
+   - Run `uv sync` to install all project dependencies
+   - Verify with `pytest -v` that tests pass
+
+3. Set up development environment:
+   - Install pre-commit hooks: `pre-commit install`
+   - Ensure git is configured with user name and email
+
 ## Code Style Patterns
 
 - Always include `from __future__ import annotations` as the first import
@@ -30,12 +50,41 @@
 - Provide actionable error messages that guide the user
 - Handle edge cases for missing dependencies or configuration
 
+## Feature Implementation Workflow
+
+1. **Document Baseline Behavior**
+   - Create an example project with the current code before any changes
+   - Document the current user experience with specific observations
+   - Save artifacts for comparison (screenshots, output logs)
+
+2. **Implement Changes**
+   - Make code modifications with appropriate error handling
+   - Run linting and static analysis (ruff, mypy, pylint)
+   - Run test suite to verify unit/integration tests pass
+
+3. **Verify Implementation**
+   - ALWAYS execute the actual code with the new changes
+   - Create example projects to verify the feature works as expected
+   - Compare with baseline to confirm correct behavior changes
+   - Test edge cases (missing git, invalid config, etc.)
+
+4. **Only Then Document**
+   - Update documentation ONLY after verified working implementation
+   - Include specific examples of the feature in action
+   - Document both successful paths and error handling
+
+5. **A/B Comparison**
+   - Always maintain ability to compare original vs new behavior
+   - Consider using git stash/branches to preserve original state
+   - Provide concrete evidence of feature improvement
+
 ## Testing Strategy
 
 - Use pytest for all tests
 - Test the CLI by running it with different configurations
 - Mock external dependencies where appropriate
 - Include both positive and negative test cases
+- CRUCIAL: Execute real-world examples - passing tests is NOT sufficient verification
 
 ## Documentation Conventions
 
