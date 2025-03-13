@@ -23,8 +23,28 @@ This repository is configured to automatically publish to PyPI when a new releas
 ### Prerequisites
 
 - You must have write access to the GitHub repository
-- PyPI project must have trusted publishing configured for this repository
+- PyPI project must have trusted publishing configured for this repository or a PYPI_API_TOKEN secret configured
 - All code changes must be committed and pushed to the main branch
+
+#### Setting Up Trusted Publishing (Recommended)
+
+For maximum security, you can set up trusted publishing in PyPI:
+
+1. Go to your PyPI project: <https://pypi.org/project/uvi/>
+2. Navigate to "Manage" > "Publishing"
+3. Add a new publisher:
+   - Select "GitHub Actions"
+   - Enter repository name: `shaneholloman/uvi`
+   - Set workflow name: `release.yml`
+   - Choose environment: leave blank for regular repos
+
+#### Alternative: GitHub Secret for PyPI Token
+
+A PYPI_API_TOKEN secret has been added to the repository as a fallback mechanism:
+
+1. The token is stored securely in GitHub repository secrets
+2. It will only be used if trusted publishing fails
+3. No need to add or modify this token unless it expires
 
 ### Steps to Publish a New Release
 
@@ -57,8 +77,11 @@ The GitHub Actions workflow will automatically:
 
 - Run tests to verify the package
 - Build the package using UV
-- Publish to PyPI using trusted publishing
+- Try to publish to PyPI using trusted publishing (primary method)
+- Fall back to token-based publishing if trusted publishing isn't set up
 - Deploy the documentation to GitHub Pages
+
+The workflow is designed to be resilient, with a dual publishing approach that works whether trusted publishing is set up or not.
 
 ## Method 2: Manual Publishing
 
