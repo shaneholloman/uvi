@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide documents our dual-linter approach using Ruff as our primary linter and Pylint as a secondary linter. While Ruff is fast and catches most issues, Pylint provides additional checks that complement Ruff's capabilities.
+This guide documents our linting approach using Ruff as our primary linter. Ruff is a fast, modern Python linter that includes Pylint-equivalent rules for comprehensive code quality checks.
 
 ## Linter Configuration
 
@@ -48,6 +48,11 @@ select = [
   "RUF",
   # tryceratops
   "TRY",
+  # Pylint-equivalent rules
+  "PLC", # pylint-convention
+  "PLE", # pylint-error
+  "PLR", # pylint-refactor
+  "PLW", # pylint-warning
 ]
 ignore = [
   # LineTooLong
@@ -57,18 +62,9 @@ ignore = [
 ]
 ```
 
-### Pylint Configuration
-
-Our minimal `.pylintrc`:
-
-```ini
-[format]
-max-line-length=120
-```
-
 ## Running Linters
 
-### Fast Development Checks (Ruff)
+### Development Checks
 
 ```bash
 # Check code
@@ -76,21 +72,14 @@ ruff check .
 
 # Fix auto-fixable issues
 ruff check --fix .
-```
 
-### Deep Analysis (Pylint)
-
-```bash
-# Run on specific files
-pylint uvi/cli.py
-
-# Run on whole package
-pylint uvi
+# Format code
+ruff format .
 ```
 
 ### Pre-commit Integration
 
-Our `.pre-commit-config.yaml` runs both:
+Our `.pre-commit-config.yaml` configuration:
 
 ```yaml
 repos:
@@ -98,102 +87,97 @@ repos:
     rev: "v0.6.3"
     hooks:
       - id: ruff
-        args: [--fix, --exit-non-zero-on-fix]
+        args: [--exit-non-zero-on-fix, --config=pyproject.toml]
+        exclude: ^{{cookiecutter.project_name}}
       - id: ruff-format
-
-  - repo: https://github.com/PyCQA/pylint
-    rev: "v3.0.3"
-    hooks:
-      - id: pylint
+        args: [--config=pyproject.toml]
+        exclude: ^{{cookiecutter.project_name}}
 ```
 
 ## Linting Strategy
 
-### Why Both Linters?
+### Why Ruff?
 
-1. **Ruff** (Primary Linter)
+1. **Comprehensive Coverage**
 
-   - Extremely fast execution
-   - Catches most common issues
-   - Auto-fixes many problems
-   - Used during active development
+   - Includes most functionality from tools like Flake8, Black, isort, pyupgrade, etc.
+   - Incorporates Pylint-equivalent rules for deeper code analysis
+   - Detects security issues, antipatterns, and complexity issues
 
-2. **Pylint** (Secondary Linter)
-   - More thorough analysis
-   - Catches complex issues
-   - Better type checking
-   - Run before commits/PRs
+2. **Performance**
 
-### Common Issues Unique to Each
+   - Extremely fast execution (written in Rust)
+   - Efficient for CI/CD pipelines
+   - Quick developer feedback
 
-#### Ruff Catches
+3. **Modern Features**
+   - Auto-fix capabilities for many issues
+   - Type annotation checks
+   - Pre-commit integration
+   - Built-in formatter
 
-- Import sorting
-- Simple code style issues
-- Basic type annotations
-- Common security issues
-- Unused imports
+### What Ruff Catches
 
-#### Pylint Catches
-
-- Complex code flows
-- Deeper variable usage analysis
-- Advanced type checking
-- Possible design problems
-- Documentation completeness
+- Import sorting and organization
+- Code style and formatting issues
+- Type annotation problems
+- Security vulnerabilities
+- Unused imports and variables
+- Complex code and high cyclomatic complexity
+- Documentation issues
+- And much more!
 
 ## Best Practices
 
 1. **Development Workflow**
 
    - Run Ruff frequently during development
-   - Use Ruff's auto-fix capability
-   - Run Pylint before committing
-   - Address Pylint warnings thoughtfully
+   - Use Ruff's auto-fix capability (`ruff check --fix`)
+   - Format code with `ruff format`
+   - Address all warnings before committing
 
 2. **Issue Resolution**
 
-   - Fix Ruff issues immediately (they're usually straightforward)
-   - Review Pylint warnings carefully (they might indicate design issues)
-   - Document any necessary linter suppressions
+   - Fix issues immediately during development
+   - Use proper exception handling instead of noqa directives
+   - Document necessary suppressions (rare cases only)
 
 3. **Configuration Management**
    - Keep Ruff rules up to date
-   - Minimize Pylint suppressions
-   - Document why rules are disabled
+   - Minimize rule suppressions
+   - Document why rules are ignored when necessary
+
+## Recommended IDE Setup
+
+For the best development experience:
+
+1. **VS Code**
+
+   - Install the Ruff extension
+   - Configure auto-formatting on save
+   - Enable lint-on-save
+
+2. **PyCharm/IntelliJ**
+   - Use the Ruff plugin
+   - Configure auto-formatting
 
 ## CI Integration
 
-Both linters run in CI:
+Ruff runs in CI:
 
-1. Ruff runs first (fast feedback)
-2. Pylint runs after (deeper analysis)
-3. Both must pass for PR approval
-
-## Trade-offs and Decisions
-
-### Why Keep Pylint?
-
-- Catches issues Ruff misses
-- Better for complex code analysis
-- Stronger typing checks
-- More thorough documentation checks
-
-### Why Use Ruff?
-
-- Much faster execution
-- Good auto-fix capabilities
-- Active development
-- Growing rule set
+1. Checks all code for issues
+2. Verifies formatting standards
+3. Must pass for PR approval
 
 ## Future Considerations
 
-1. Monitor Ruff's development
+1. Stay current with Ruff updates
 
-   - May be able to reduce Pylint usage as Ruff grows
-   - Watch for new rules that could replace Pylint checks
+   - Ruff is actively developed
+   - New rules and features are added regularly
+   - Update to newer versions as available
 
 2. Regular Review
-   - Reassess linting strategy quarterly
+   - Reassess linting strategy periodically
    - Update rules as project needs change
    - Consider new tools as they emerge

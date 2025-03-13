@@ -1,4 +1,3 @@
-
 # UVI Project Brief
 
 ## Project Definition
@@ -10,7 +9,7 @@ UVI (UV Init) is a modern Cookiecutter template for Python projects that integra
 1. Provide a simple command-line interface for creating new Python projects
 2. Utilize cookiecutter for project templating
 3. Integrate UV for dependency management
-4. Include modern code quality tools (ruff, mypy, pylint)
+4. Include modern code quality tools (ruff with Pylint-equivalent rules, mypy)
 5. Support testing with pytest and code coverage
 6. Offer documentation generation with MkDocs
 7. Enable CI/CD workflows with GitHub Actions
@@ -34,6 +33,7 @@ UVI (UV Init) is a modern Cookiecutter template for Python projects that integra
 
 ## Current Priorities
 
-- Implement git user details prefilling for cookiecutter prompts
-- Maintain and update the existing feature set
-- Address items in the TODO.md file
+- ✅ Implement git user details prefilling for cookiecutter prompts
+- ✅ Migrate from Pylint to Ruff with Pylint-equivalent rules
+- Fix remaining linting issues in the info/ directory
+- Address remaining items in the TODO.md file

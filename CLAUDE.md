@@ -3,7 +3,7 @@
 ## Commands
 
 - **Build/Install**: `uv sync`
-- **Lint**: `uv run pre-commit run -a` or `uv run ruff check .`
+- **Lint**: `uv run pre-commit run -a` or `uv run ruff check .` or `uv run ruff format .`
 - **Typecheck**: `uv run mypy`
 - **Test (all)**: `uv run python -m pytest --cov --cov-config=pyproject.toml tests`
 - **Test (single)**: `uv run python -m pytest tests/test_file.py::TestClass::test_function -v`
@@ -20,10 +20,10 @@
 - **Documentation**: Google-style docstrings with Args/Returns sections
 - **Naming**: snake_case for variables/functions, UPPER_CASE for constants
 - **Error Handling**: Catch specific exceptions first, use descriptive error messages
-- **Formatting**: Uses ruff for auto-formatting, pylint for deeper analysis
+- **Formatting**: Uses ruff for auto-formatting and comprehensive linting (including Pylint-equivalent rules)
 - **Functions**: Small, focused with single responsibilities
 - **Testing**: pytest with coverage reporting, focus on reliability over coverage percentage
 
 ## Dependencies
 
-uv for package management, ruff/pylint for linting, mypy for type checking, pytest for testing
+uv for package management, ruff for linting and formatting, mypy for type checking, pytest for testing

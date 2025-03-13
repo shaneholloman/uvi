@@ -10,8 +10,7 @@
 
 ### Development Dependencies
 
-- **Ruff**: Fast Python linter and formatter
-- **Pylint**: Static code analyzer
+- **Ruff**: Fast Python linter and formatter (includes Pylint-equivalent rules)
 - **MyPy**: Static type checking
 - **Pytest**: Testing framework
 - **Pre-commit**: Git hook framework
@@ -82,7 +81,7 @@ The project uses several development dependencies:
 
 ```python
 dev = [
-  "pylint>=3.0.0",
+  # Pylint has been replaced by Ruff with Pylint-equivalent rules
   "pytest>=7.2.0",
   "pre-commit>=2.20.0",
   "pytest-cookies>=0.6.1",

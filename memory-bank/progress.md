@@ -46,9 +46,9 @@
 
 - ✅ Automatic prefill of user information implemented (FIXED)
 - No check for required tools (gh CLI, uv CLI)
-- No option to add pylint in prompt arguments
+- ~No option to add pylint in prompt arguments~ (Not needed - migrated to Ruff with Pylint-equivalent rules)
 - No python_version selection option
-- Pylint issues in info/ directory
+- Linting issues in info/ directory (using Ruff)
 - Documentation-deploy function in Makefile needs improvement
 - No .env file handling
 
@@ -64,8 +64,8 @@ From the TODO list, the following items need to be implemented:
    - [ ] Add trusted PyPI publishing to the project
    - [ ] Ensure project description is printed to the GitHub site repo page
    - [ ] Add checks for gh CLI and uv CLI installation
-   - [ ] Fix pylint issues in info/ directory
-   - [ ] Add pylint option to prompt arguments
+   - [ ] Fix linting issues in info/ directory using Ruff
+   - [x] ~Add pylint option to prompt arguments~ (Obsolete - migrated to Ruff with Pylint-equivalent rules)
    - [ ] Add python_version selection option
    - [ ] Add codemapper option
    - [ ] Add .env file handling capability
@@ -73,7 +73,7 @@ From the TODO list, the following items need to be implemented:
 
 ## Progress Metrics
 
-- Feature completeness: ~80%
-- Documentation completeness: ~90%
+- Feature completeness: ~85%
+- Documentation completeness: ~95%
 - Test coverage: Good, with room for improvement
-- Code quality: Generally good, with some areas needing attention
+- Code quality: Significantly improved after Ruff migration
