@@ -2,12 +2,6 @@
 
 This page contains a mostly complete tutorial on how to create your project.
 
-!!! note "test"
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-
 > Like me know if something is missing. I'm happy to help!
 
 ## Step 1: Install uv
