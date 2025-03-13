@@ -4,6 +4,11 @@
   border-left-width: 4px;
 }
 
+.md-typeset h1,
+.md-typeset h2 {
+  font-weight: 900;
+}
+
 /* :root {
   --black: #222022;
   --grey: #353038;
