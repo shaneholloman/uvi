@@ -1,4 +1,6 @@
-# Reproducible development environments with VSCode devcontainers
+# Devcontainers
+
+Reproducible development environments with VSCode devcontainers
 
 If `devcontainer` is set to `"y"` project uses the VSCode [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)
 specification to create a reproducible development environment. The devcontainer

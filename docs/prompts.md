@@ -1,4 +1,4 @@
-# Prompt Arguments
+# Prompts
 
 > [!NOTE]
 > Not Ai prompts, but rather the prompts for the `uvi` command. There zero Ai function in this project

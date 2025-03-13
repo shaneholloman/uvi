@@ -161,17 +161,18 @@ brew install uvi
 
 1. **For Homebrew Core**:
 
-   - [ ] Get current PyPI package URL
-   - [ ] Calculate SHA256
-   - [ ] Submit PR to Homebrew Core
-   - [ ] Address reviewer feedback
+    - [x] Get current PyPI package URL
+    - [x] Calculate SHA256
+    - [x] Submit PR to Homebrew Core
+    - [x] Address reviewer feedback
 
 2. **For Personal Tap**:
-   - [ ] Create homebrew-tools repository
-   - [ ] Set up GitHub Actions workflow
-   - [ ] Add WORKFLOW_TOKEN secret
-   - [ ] Update release workflow in main repository
-   - [ ] Test installation process
+
+    - [x] Create homebrew-tools repository
+    - [x] Set up GitHub Actions workflow
+    - [x] Add WORKFLOW_TOKEN secret
+    - [x] Update release workflow in main repository
+    - [x] Test installation process
 
 ## Notes
 

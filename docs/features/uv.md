@@ -1,4 +1,4 @@
-# Dependency Management with uv
+# Dependency Management
 
 The generated repository uses [uv](https://docs.astral.sh/uv/) for fast, reliable Python package management. When you create your repository using this cookiecutter template, a uv environment is pre-configured in `pyproject.toml`.
 

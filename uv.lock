@@ -716,6 +716,18 @@ wheels = [
 ]
 
 [[package]]
+name = "mkdocs-github-admonitions-plugin"
+version = "0.0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "mkdocs" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/65/13/a2b2b81604481569982fdaf51f0746f320df303efbd13d7b74fbf7b2c3a4/mkdocs_github_admonitions_plugin-0.0.3.tar.gz", hash = "sha256:4fd3ca88157c18c5f0cc4420c1a7f73ed1ed3f1886f41d6ce869932e90f38c48", size = 3998 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d2/87/650f2cbd07f142034d84357ac651586748032546287ba70e90244180b92c/mkdocs_github_admonitions_plugin-0.0.3-py3-none-any.whl", hash = "sha256:cb06f56e5b51e5d7b22fcbb4ab632079e3082b7f37bdbeb20cc9fd8a7c5e1657", size = 5043 },
+]
+
+[[package]]
 name = "mkdocs-material"
 version = "9.6.7"
 source = { registry = "https://pypi.org/simple" }
@@ -1426,6 +1438,7 @@ dependencies = [
 dev = [
     { name = "build" },
     { name = "deptry" },
+    { name = "mkdocs-github-admonitions-plugin" },
     { name = "mkdocs-material" },
     { name = "mkdocstrings", extra = ["python"] },
     { name = "mypy" },
@@ -1445,6 +1458,7 @@ requires-dist = [{ name = "cookiecutter", specifier = ">=2.6.0" }]
 dev = [
     { name = "build", specifier = ">=1.2.2.post1" },
     { name = "deptry", specifier = ">=0.23.0" },
+    { name = "mkdocs-github-admonitions-plugin", specifier = ">=0.0.3" },
     { name = "mkdocs-material", specifier = ">=9.6.7" },
     { name = "mkdocstrings", extras = ["python"], specifier = ">=0.29.0" },
     { name = "mypy", specifier = ">=1.15.0" },
