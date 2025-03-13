@@ -7,6 +7,7 @@ including removal of unused files/directories and proper license file placement.
 
 # pylint: disable=comparison-of-constants
 # Disabled because these are cookiecutter template variables, not actual constants
+# ruff: noqa: PLR0133
 
 from __future__ import annotations
 
@@ -61,9 +62,8 @@ def should_remove_release_workflow() -> bool:
 if __name__ == "__main__":  # pylint: disable=comparison-of-constants
     if "{{cookiecutter.include_github_actions}}" != "y":
         remove_dir(".github")
-    else:
-        if should_remove_release_workflow():
-            remove_file(".github/workflows/on-release-main.yml")
+    elif should_remove_release_workflow():
+        remove_file(".github/workflows/on-release-main.yml")
 
     if "{{cookiecutter.mkdocs}}" != "y":
         remove_dir("docs")

@@ -12,6 +12,13 @@ import subprocess
 
 from tests.utils import file_contains_text, is_valid_yaml, run_within_dir
 
+# License file line counts
+MIT_LICENSE_LINE_COUNT = 21
+BSD_LICENSE_LINE_COUNT = 28
+ISC_LICENSE_LINE_COUNT = 7
+APACHE_LICENSE_LINE_COUNT = 202
+GPL_LICENSE_LINE_COUNT = 674
+
 
 def test_bake_project(cookies):
     """Test basic project generation with minimal configuration."""
@@ -180,7 +187,7 @@ def test_license_mit(cookies, tmp_path):
         assert not os.path.isfile(f"{result.project_path}/LICENSE_GPL")
         with open(f"{result.project_path}/LICENSE", encoding="utf8") as licfile:
             content = licfile.readlines()
-            assert len(content) == 21
+            assert len(content) == MIT_LICENSE_LINE_COUNT
 
 
 def test_license_bsd(cookies, tmp_path):
@@ -195,7 +202,7 @@ def test_license_bsd(cookies, tmp_path):
         assert not os.path.isfile(f"{result.project_path}/LICENSE_GPL")
         with open(f"{result.project_path}/LICENSE", encoding="utf8") as licfile:
             content = licfile.readlines()
-            assert len(content) == 28
+            assert len(content) == BSD_LICENSE_LINE_COUNT
 
 
 def test_license_isc(cookies, tmp_path):
@@ -210,7 +217,7 @@ def test_license_isc(cookies, tmp_path):
         assert not os.path.isfile(f"{result.project_path}/LICENSE_GPL")
         with open(f"{result.project_path}/LICENSE", encoding="utf8") as licfile:
             content = licfile.readlines()
-            assert len(content) == 7
+            assert len(content) == ISC_LICENSE_LINE_COUNT
 
 
 def test_license_apache(cookies, tmp_path):
@@ -225,7 +232,7 @@ def test_license_apache(cookies, tmp_path):
         assert not os.path.isfile(f"{result.project_path}/LICENSE_GPL")
         with open(f"{result.project_path}/LICENSE", encoding="utf8") as licfile:
             content = licfile.readlines()
-            assert len(content) == 202
+            assert len(content) == APACHE_LICENSE_LINE_COUNT
 
 
 def test_license_gplv3(cookies, tmp_path):
@@ -240,7 +247,7 @@ def test_license_gplv3(cookies, tmp_path):
         assert not os.path.isfile(f"{result.project_path}/LICENSE_APACHE")
         with open(f"{result.project_path}/LICENSE", encoding="utf8") as licfile:
             content = licfile.readlines()
-            assert len(content) == 674
+            assert len(content) == GPL_LICENSE_LINE_COUNT
 
 
 def test_license_no_license(cookies, tmp_path):
