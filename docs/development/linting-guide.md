@@ -1,4 +1,6 @@
-# Linting Strategy Guide for UVI Development
+# Linting Guide
+
+> Linting Strategy Guide for UVI Development
 
 ## Overview
 

@@ -1,4 +1,6 @@
-# Making uvi Available via Homebrew
+# Homebrew Guide
+
+> Making uvi Available via Homebrew
 
 This guide outlines the process of making `uvi` available through Homebrew, both via a personal tap and through Homebrew Core.
 
