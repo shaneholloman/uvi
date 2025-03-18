@@ -42,16 +42,18 @@
 - All advertised features are implemented
 - Pylint migrated to Ruff with Pylint-equivalent rules
 - Documentation is in place
+- Documentation for enhanced binary input handling created
 - Planning migration from Tox to Nox for testing (detailed plan in docs/briefs/tox-to-nox-migration.md)
 
 ## Known Issues
 
 - [x] Automatic prefill of user information implemented (FIXED)
-- No check for required tools (gh CLI, uv CLI)
-- No python_version selection option
-- Linting issues in info/ directory (using Ruff)
-- Documentation-deploy function in Makefile needs improvement
-- No .env file handling
+- [ ] Binary questions only accept exact "y" or "n" inputs (Enhancement planned)
+- [ ] No check for required tools (gh CLI, uv CLI)
+- [ ] No python_version selection option
+- [ ] Linting issues in info/ directory (using Ruff)
+- [ ] Documentation-deploy function in Makefile needs improvement
+- [ ] No .env file handling
 
 ## What's Left to Build
 
@@ -62,8 +64,9 @@ From the TODO list, the following items need to be implemented:
    - [x] Implementation of user information prefill for cookiecutter prompts (GitHub CLI + git + fallbacks)
    - [x] ~Add pylint option to prompt arguments~ (Obsolete - migrated to Ruff with Pylint-equivalent rules)
 
-2. **In Progress**
+2. **In Progress/Planned**
 
+   - [ ] Enhance binary input handling for CLI questionnaire (accept y/Y/yes/1 and n/N/no/2)
    - [ ] Migrate from Tox to Nox for testing infrastructure
 
 3. **Future Work**

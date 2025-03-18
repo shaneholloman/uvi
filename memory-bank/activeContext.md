@@ -2,13 +2,15 @@
 
 ## Current Work Focus
 
-The current focus is on three main improvements:
+The current focus is on four main improvements:
 
 1. Implementing the ability to prefill the cookiecutter prompts with the user's git username and email. This feature has been successfully implemented using proper implementation workflow.
 
 2. Modernizing the linting system by migrating from Pylint to Ruff with Pylint-equivalent rules. This improves code quality, speeds up linting, and simplifies the development workflow.
 
 3. Planning migration from Tox to Nox for testing. This will provide better UV integration, increased flexibility through Python-native configuration, and a more modern architecture for the testing system.
+
+4. Enhancing binary input handling in the CLI questionnaire to accept more flexible user inputs. This will improve user experience by allowing multiple input formats (`y`/`Y`/`yes`/`1` and `n`/`N`/`no`/`2`) for binary questions.
 
 ## Recent Changes
 
@@ -27,6 +29,7 @@ The current focus is on three main improvements:
 - Ensured dependency version parity between the main project and the template
 - Synchronized pre-commit hook versions between the main project and template
 - Added Pylint-equivalent rules to the template's Ruff configuration
+- Created documentation for enhanced binary input handling (docs/briefs/enhanced-binary-inputs.md)
 
 ## Implementation Details: Dependency Updates
 
@@ -168,6 +171,70 @@ The current focus is on three main improvements:
 5. Improved exception handling in the codebase to follow Ruff's best practices
 6. Resolved inconsistencies between Ruff and Pylint rules
 
+## Implementation Plan: Enhanced Binary Input Handling
+
+### Current Behavior
+
+- UVI CLI questionnaire only accepts exact matches for binary choices (lowercase `y` or `n`)
+- Common variations (`Y`, `N`, `yes`, `no`, `1`, `2`) are rejected
+- This creates friction in the user experience, especially for CLI users accustomed to number-based menus
+
+### Planned Improvements
+
+- Create a custom input handler that wraps cookiecutter's prompting system
+- Accept more flexible inputs for binary (yes/no) questions:
+  - Case-insensitive letter inputs: `y`, `Y`, `n`, `N`
+  - Full word inputs: `yes`, `no` (case-insensitive)
+  - Numeric inputs: `1` (for yes), `2` (for no)
+- Normalize all accepted inputs to cookiecutter's expected format (`y` or `n`)
+
+### Implementation Strategy
+
+1. Create a function to parse cookiecutter.json and identify binary choice questions
+2. Implement a custom input handler for binary questions
+3. Integrate this handler into the CLI workflow
+4. Maintain backward compatibility and proper error handling
+
+### Documentation
+
+- Full implementation details are available in docs/briefs/enhanced-binary-inputs.md
+- The brief includes code examples, technical details, and alignment with project goals
+
+## Project Brief Documents
+
+All planned enhancements and strategic improvements have been documented in the following briefs:
+
+1. **CLI Enhancements** (docs/briefs/cli-enhancements.md)
+   - Smarter template download behavior
+   - Tool availability checking
+   - Enhanced user feedback
+
+2. **Enhanced Binary Inputs** (docs/briefs/enhanced-binary-inputs.md)
+   - Flexible input handling for binary choices
+   - Support for y/Y/yes/1 and n/N/no/2 formats
+
+3. **GitHub Pages Integration** (docs/briefs/github-pages-integration.md)
+   - Automated documentation deployment
+   - MkDocs integration with GitHub Pages
+
+4. **Makefile Enhancements** (docs/briefs/makefile-enhancements.md)
+   - Improved docs-deploy function
+   - Simplified common operations
+
+5. **Template Dependency Parity** (docs/briefs/template-dependency-parity.md)
+   - Ensures dependency versions match between main project and template
+   - Automated version synchronization
+
+6. **Tox to Nox Migration** (docs/briefs/tox-to-nox-migration.md)
+   - Python-native test configuration
+   - Better UV integration
+   - More flexible test management
+
+7. **UVI Future Strategy** (docs/briefs/uvi-future-strategy.md)
+   - Long-term vision for UVI
+   - Cookiecutter maintenance concerns
+   - Potential alternative approaches
+
 ## Next Steps
 
 1. **Highest Priority:** Implement smarter template download behavior to eliminate the re-download prompt
@@ -176,14 +243,17 @@ The current focus is on three main improvements:
     - If offline: Use the cached version without prompting
     - Documented in docs/briefs/cli-enhancements.md
 
-2. Implement Tox to Nox migration (detailed plan in docs/briefs/tox-to-nox-migration.md)
-3. Fix remaining linting issues in the info/ directory using Ruff
-4. Add python_version selection option
-5. Consider implementing other CLI enhancements from docs/briefs/cli-enhancements.md
-6. Consider implementing Makefile enhancements documented in docs/briefs/makefile-enhancements.md
-7. Discuss and develop a strategy for Cookiecutter maintenance concerns documented in docs/briefs/uvi-future-strategy.md
-8. Consider implementing other items from the TODO list in future work
-9. Version bump and PyPI publish with all improvements
+2. Implement enhanced binary input handling for CLI questionnaire (docs/briefs/enhanced-binary-inputs.md)
+3. Implement Tox to Nox migration (detailed plan in docs/briefs/tox-to-nox-migration.md)
+4. Fix remaining linting issues in the info/ directory using Ruff
+5. Add python_version selection option
+6. Consider implementing other CLI enhancements from docs/briefs/cli-enhancements.md
+7. Consider implementing Makefile enhancements documented in docs/briefs/makefile-enhancements.md
+8. Discuss and develop a strategy for Cookiecutter maintenance concerns documented in docs/briefs/uvi-future-strategy.md
+9. Consider implementing GitHub Pages integration from docs/briefs/github-pages-integration.md
+10. Address template dependency parity issues detailed in docs/briefs/template-dependency-parity.md
+11. Consider implementing other items from the TODO list in future work
+12. Version bump and PyPI publish with all improvements
 
 ## Planned Implementation: Tox to Nox Migration
 
@@ -216,3 +286,4 @@ The current focus is on three main improvements:
 - Maintain backward compatibility with current usage patterns
 - Implement error handling for cases where git isn't available or config values aren't set
 - Migrate from Tox to Nox while maintaining feature parity during transition
+- Enhance CLI input handling to improve user experience while maintaining compatibility
