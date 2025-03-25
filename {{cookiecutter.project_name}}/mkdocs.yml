@@ -10,12 +10,7 @@ copyright: Maintained by <a href="https://{{cookiecutter.author_github_handle}}.
 nav:
   - Home: index.md
   - Modules: modules.md
-plugins:
-  - search
-  - mkdocstrings:
-      handlers:
-        python:
-          paths: [{{cookiecutter.project_slug}}]
+
 # Configuration
 theme:
   name: material
@@ -129,7 +124,7 @@ plugins:
         python:
           options:
             show_source: true
-
+          paths: [{{cookiecutter.project_slug}}]
 validation:
   omitted_files: warn
   absolute_links: warn
