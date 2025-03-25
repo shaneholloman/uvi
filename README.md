@@ -7,11 +7,31 @@
 
 UVI (UV Init) is a modern Python project generator built around [UV](https://docs.astral.sh/uv/) - the high-performance Python package manager that's reshaping the Python ecosystem. This tool creates fully-configured Python projects with best practices and modern development tools already set up.
 
-## TLDR
+## Table of Contents
+
+- [Quick Start](#quick-start)
+- [Why UV is the Way Forward](#why-uv-is-the-way-forward)
+- [Features](#features)
+- [Pre-configured GitHub Workflows](#pre-configured-github-workflows)
+- [UVI's Self-Consistent Philosophy](#uvis-self-consistent-philosophy)
+- [Documentation](#documentation)
+- [Project Benefits](#project-benefits)
+- [Future Plans](#future-plans)
+
+## Quick Start
 
 ```sh
-uvi # follow prompts
-uv run mkdocs serve # start your documentation server
+# Install UVI
+uv tool install uvi
+
+# Create a new project
+uvi  # Answer a few simple prompts
+
+# Navigate to your new project
+cd your-project-name
+
+# Start your documentation server
+uv run mkdocs serve
 ```
 
 ## Why UV is the Way Forward
@@ -25,10 +45,9 @@ UV represents the future of Python dependency management:
 
 This project is designed with UV as its foundation - UV is integrated into every aspect of the project architecture.
 
-> [!IMPORTANT]
-> This project 'works' but it's not done yet!
-
-See Progress: [progress](./memory-bank/progress.md)
+> [!NOTE]
+> UVI is under active development with new features being added regularly.
+> See our [progress tracker](./memory-bank/progress.md) for details.
 
 ## Features
 
@@ -75,23 +94,12 @@ The value of UVI is in this consistency - generated projects benefit from the sa
 
 ## Documentation
 
-- [Full Documentation](https://shaneholloman.github.io/uvi/)
+UVI features comprehensive documentation to help you get the most out of your projects:
 
-## Installation & Usage
-
-Install `uvi` using UV - this is the only supported method:
-
-```bash
-uv tool install uvi
-```
-
-Then run it to create your project:
-
-```bash
-uvi
-```
-
-The generated project will provide clear instructions in its README for next steps.
+- **[Full Documentation](https://shaneholloman.github.io/uvi/)**: Detailed guides and API reference
+- **Generated Docs**: Each project comes with MkDocs-powered documentation
+- **Built-in Examples**: Sample code and reference implementations included in every project
+- **Code Comments**: Clear, meaningful comments throughout the codebase
 
 ## Project Benefits
 
@@ -102,6 +110,8 @@ Projects created with UVI inherit significant advantages:
 - **Simplified workflow**: Single command for environment setup
 - **Future-ready**: Your project starts with tomorrow's best practices today
 
-## Acknowledgments
+## Future Plans
 
-UVI builds upon [Cookiecutter](https://github.com/cookiecutter/cookiecutter), the powerful project templating engine. We're grateful to the Cookiecutter team and the broader Python packaging community whose work makes tools like UVI possible.
+UVI builds upon the excellent foundation established by [Cookiecutter](https://github.com/cookiecutter/cookiecutter), which it currently uses as its template engine. While honoring this heritage, UVI continues to evolve with a focus on enhanced performance, simplified workflows, and deeper integration with the broader UV ecosystem.
+
+As UV reshapes the Python tooling landscape, UVI will remain at the forefront of modern Python project generation, bringing the best practices of both worlds together while pursuing its own technical path forward.
