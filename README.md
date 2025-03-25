@@ -7,6 +7,13 @@
 
 UVI (UV Init) is a modern Cookiecutter template built around [UV](https://docs.astral.sh/uv/) - the revolutionary Python package manager that's reshaping the Python ecosystem. This tool generates fully-configured Python projects with best practices and modern development tools already set up.
 
+## TLDR
+
+```sh
+uvi # follow prompts
+uv run mkdocs serve # rejoice!
+```
+
 ## Why UV is the Way Forward
 
 UV represents the future of Python dependency management:
