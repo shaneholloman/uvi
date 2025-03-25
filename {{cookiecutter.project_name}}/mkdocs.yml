@@ -10,6 +10,7 @@ copyright: Maintained by <a href="https://{{cookiecutter.author_github_handle}}.
 nav:
   - Home: index.md
   - Modules: modules.md
+  - Blog: blog/index.md
 
 # Configuration
 theme:
